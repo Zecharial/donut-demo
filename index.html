@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donut — מנהלים נתינה. יוצרים השפעה.</title>
+<title>Donut — הנתינה לא נעלמה. הדרך לתרום כן.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@
   .en { font-family: 'Inter', 'Heebo', sans-serif; }
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .container-narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
 
   /* ===== Nav ===== */
   nav {
@@ -66,7 +67,7 @@
   .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover); }
 
   /* ===== Hero ===== */
-  .hero { padding: 5.5rem 0 4rem; text-align: center; position: relative; overflow: hidden; }
+  .hero { padding: 5.5rem 0 4.5rem; text-align: center; position: relative; overflow: hidden; }
   .hero::before {
     content: ''; position: absolute; inset: -40% -20% auto;  height: 130%;
     background:
@@ -75,7 +76,7 @@
       radial-gradient(420px 260px at 55% 0%, rgba(255, 138, 0, 0.10), transparent 65%);
     pointer-events: none;
   }
-  .hero > .container { position: relative; }
+  .hero > .container-narrow { position: relative; }
   .badge {
     display: inline-flex; align-items: center; gap: 0.45rem;
     background: #fff; border: 1px solid rgba(99, 102, 241, 0.25);
@@ -86,22 +87,17 @@
   .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warm-orange); animation: pulse 2s infinite; }
   @keyframes pulse { 50% { opacity: 0.35; } }
   h1 {
-    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-    font-weight: 900; letter-spacing: -0.02em; line-height: 1.15;
+    font-size: clamp(2.1rem, 5.2vw, 3.5rem);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.2;
     color: var(--deep-navy);
   }
   h1 .grad-text {
     background: var(--grad-btn);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .hero-en {
-    font-family: 'Inter', sans-serif; font-weight: 700;
-    font-size: clamp(1rem, 2.2vw, 1.35rem);
-    color: var(--indigo-blue); margin-top: 0.9rem; direction: ltr;
-  }
   .hero-sub {
-    max-width: 620px; margin: 1.4rem auto 0;
-    font-size: 1.13rem; color: rgba(11, 16, 33, 0.68);
+    max-width: 560px; margin: 1.4rem auto 0;
+    font-size: 1.2rem; color: rgba(11, 16, 33, 0.68);
   }
   .hero-actions { display: flex; gap: 0.9rem; justify-content: center; margin-top: 2.2rem; flex-wrap: wrap; }
   .btn-primary {
@@ -122,83 +118,59 @@
   .btn-ghost:hover { border-color: var(--indigo-blue); transform: translateY(-2px); }
   .hero-note { margin-top: 1.3rem; font-size: 0.85rem; color: rgba(11, 16, 33, 0.45); }
 
-  /* ===== Sections ===== */
+  /* ===== Story ===== */
   section { padding: 4rem 0; }
+  .story p {
+    font-size: 1.15rem; color: rgba(11, 16, 33, 0.78);
+    margin-bottom: 1.4rem;
+  }
+  .story .lead-line {
+    font-size: 1.35rem; font-weight: 700; color: var(--deep-navy);
+  }
+  .story .pull {
+    font-size: 1.5rem; font-weight: 800; line-height: 1.5;
+    text-align: center; margin: 2.6rem 0;
+    color: var(--deep-navy);
+  }
+  .story .pull .grad-text {
+    background: var(--grad-btn);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .story-card {
+    background: #fff; border: 1px solid rgba(11, 16, 33, 0.05);
+    border-radius: var(--radius-2xl); box-shadow: var(--shadow-soft);
+    padding: 2.2rem 2.4rem; margin-top: 2.4rem;
+  }
+  .story-card p:last-child { margin-bottom: 0; }
+  .divider {
+    width: 64px; height: 4px; border-radius: 999px;
+    background: var(--grad-btn); margin: 0 auto;
+  }
+
+  /* ===== Pioneers ===== */
+  .pioneers { background: #fff; }
   .section-tag {
     display: inline-block; font-weight: 700; font-size: 0.9rem;
     color: var(--vibrant-pink); margin-bottom: 0.5rem;
   }
-  h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; letter-spacing: -0.01em; }
-  .section-sub { color: rgba(11, 16, 33, 0.62); max-width: 560px; margin-top: 0.7rem; }
-
-  /* ===== Demo tabs ===== */
-  .demo-shell {
-    margin-top: 2.5rem; background: #fff;
-    border-radius: var(--radius-2xl); box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(11, 16, 33, 0.05);
-    overflow: hidden;
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; letter-spacing: -0.01em; margin-bottom: 1.4rem; }
+  .pioneers p { font-size: 1.13rem; color: rgba(11, 16, 33, 0.75); margin-bottom: 1.3rem; }
+  .pioneers p strong { color: var(--deep-navy); }
+  .reassure { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin: 2.2rem 0; }
+  .reassure-card {
+    background: var(--soft-white); border: 1px solid rgba(11, 16, 33, 0.05);
+    border-radius: var(--radius-2xl); padding: 1.2rem 1.3rem; text-align: center;
   }
-  .tabs {
-    display: flex; gap: 0.4rem; padding: 0.9rem;
-    background: var(--soft-white);
-    border-bottom: 1px solid rgba(11, 16, 33, 0.06);
-    flex-wrap: wrap;
-  }
-  .tab-btn {
-    flex: 1; min-width: 170px;
-    background: transparent; border: none; cursor: pointer;
-    font-family: inherit; font-weight: 600; font-size: 0.98rem;
-    color: rgba(11, 16, 33, 0.55);
-    padding: 0.7rem 1rem; border-radius: var(--radius-xl);
-    transition: all 0.2s;
-  }
-  .tab-btn.active {
-    background: var(--grad-btn); color: #fff;
-    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
-  }
-  .tab-panel { display: none; padding: 2rem; animation: fadein 0.35s ease; }
-  .tab-panel.active { display: block; }
-  @keyframes fadein { from { opacity: 0; transform: translateY(8px); } }
-
-  .panel-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
-  .panel-title { font-size: 1.25rem; font-weight: 800; }
-  .panel-title .en-sub { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--indigo-blue); margin-inline-start: 0.5rem; }
-  .panel-caption { font-size: 0.85rem; color: rgba(11,16,33,0.5); }
-
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-  .stat-card {
-    background: var(--soft-white);
-    border: 1px solid rgba(11, 16, 33, 0.05);
-    border-radius: var(--radius-2xl);
-    padding: 1.3rem 1.4rem;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
-  .stat-label { font-size: 0.88rem; font-weight: 600; color: rgba(11, 16, 33, 0.55); }
-  .stat-value { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.02em; margin-top: 0.3rem; }
-  .stat-value.orange { color: var(--warm-orange); }
-  .stat-value.pink { color: var(--vibrant-pink); }
-  .stat-value.indigo { color: var(--indigo-blue); }
-  .stat-foot { font-size: 0.8rem; color: rgba(11, 16, 33, 0.45); margin-top: 0.2rem; }
-  .chip {
-    display: inline-block; margin-top: 0.5rem;
-    background: var(--indigo-blue); color: #fff;
-    font-size: 0.85rem; font-weight: 600;
-    padding: 0.3rem 0.9rem; border-radius: 999px;
-  }
-  .chip.whatsapp { background: #22C55E; }
-  .bar-row { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.9rem; }
-  .bar-name { width: 82px; font-size: 0.86rem; font-weight: 600; color: rgba(11,16,33,0.6); flex-shrink: 0; }
-  .bar-track { flex: 1; height: 10px; border-radius: 999px; background: rgba(11,16,33,0.06); overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 999px; background: var(--grad-btn); width: 0; transition: width 1s ease; }
-  .bar-num { width: 90px; font-size: 0.86rem; font-weight: 700; flex-shrink: 0; }
+  .reassure-card .icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .reassure-card .t { font-weight: 700; }
+  .reassure-card .s { font-size: 0.88rem; color: rgba(11, 16, 33, 0.55); }
 
   /* ===== Form ===== */
-  .signup { background: var(--deep-navy); color: #fff; border-radius: 0; }
+  .signup { background: var(--deep-navy); color: #fff; }
   .signup .section-tag { color: var(--warm-orange); }
   .signup h2 { color: #fff; }
-  .signup .section-sub { color: rgba(255,255,255,0.65); }
-  .signup-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; margin-top: 1rem; }
+  .signup .section-sub { color: rgba(255,255,255,0.65); max-width: 560px; margin-top: -0.6rem; }
+  .signup-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; margin-top: 2.2rem; }
   @media (max-width: 800px) { .signup-grid { grid-template-columns: 1fr; } }
   .counter-box { text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-2xl); }
   .counter-num {
@@ -225,15 +197,6 @@
   }
   .form-note { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
 
-  /* ===== Status strip ===== */
-  .status-strip { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
-  .status-pill {
-    background: #fff; border: 1px solid rgba(11,16,33,0.08);
-    border-radius: 999px; padding: 0.4rem 1.1rem;
-    font-size: 0.85rem; font-weight: 600; color: rgba(11,16,33,0.6);
-  }
-  .status-pill b { color: var(--indigo-blue); }
-
   footer { padding: 2.5rem 0 3rem; text-align: center; color: rgba(11, 16, 33, 0.45); font-size: 0.85rem; }
   footer .logo { justify-content: center; margin-bottom: 0.8rem; }
   .disclaimer { max-width: 640px; margin: 0.8rem auto 0; font-size: 0.78rem; line-height: 1.7; }
@@ -247,147 +210,107 @@
       <span class="logo-ring"></span>
       <span class="logo-word en">Donut</span>
     </a>
-    <a class="nav-cta" href="#signup">להרשמה מוקדמת</a>
+    <a class="nav-cta" href="#signup">אני רוצה להיות מהראשונים</a>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="container">
-    <span class="badge"><span class="dot"></span> בשלב בדיקת היתכנות · רשימת המתנה פתוחה</span>
-    <h1>מנהלים נתינה.<br><span class="grad-text">יוצרים השפעה.</span></h1>
-    <div class="hero-en en">Your Impact. All in One Place.</div>
-    <p class="hero-sub">
-      Donut היא מערכת ההפעלה של עולם הנתינה — מקום אחד שבו תורמים רואים את ההשפעה שלהם,
-      ועמותות מנהלות קהילה, גיוס ונתונים. פשוט, שקוף, מדויק.
-    </p>
+  <div class="container-narrow">
+    <span class="badge"><span class="dot"></span> רשימת המתנה מצומצמת לעמותות · פתוחה עכשיו</span>
+    <h1>הנתינה לא נעלמה.<br><span class="grad-text">הדרך לתרום כן.</span></h1>
+    <p class="hero-sub">פעם זה היה קורה כמעט בלי לחשוב.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#signup">אני רוצה להצטרף לרשימת ההמתנה</a>
-      <a class="btn-ghost" href="#demo">לצפייה בדמו החי</a>
+      <a class="btn-primary" href="#signup">אני רוצה להיות מהראשונים</a>
+      <a class="btn-ghost" href="#story">לקרוא את הסיפור</a>
     </div>
-    <div class="hero-note">המערכת בפיתוח טכנולוגי · הנתונים בדמו להמחשה בלבד</div>
+    <div class="hero-note">ללא התחייבות · ללא עלות · ללא שינוי מצדכם</div>
   </div>
 </header>
 
-<section id="demo">
-  <div class="container">
-    <span class="section-tag">הדמו האינטראקטיבי</span>
-    <h2>שלוש זוויות. מערכת אחת.</h2>
-    <p class="section-sub">כך נראית חוויית Donut — מהתורם הבודד, דרך דשבורד העמותה ועד תמונת האנליטיקס המלאה.</p>
+<section class="story" id="story">
+  <div class="container-narrow">
+    <p class="lead-line">בסיום כל קנייה נשארו כמה מטבעות בכיס.</p>
+    <p>
+      חלקם נשארו אצלנו, וחלקם מצאו את דרכם באופן טבעי לקופת הצדקה שעמדה ליד הקופה.
+      זו לא הייתה החלטה גדולה, לא קמפיין, ולא תרומה מיוחדת. זו פשוט הייתה דרך חיים.
+      הנתינה הייתה חלק מהשגרה.
+    </p>
+    <p>
+      עם השנים העולם השתנה. עברנו לכרטיסי אשראי, לטלפונים ולארנקים דיגיטליים.
+      המטבעות נעלמו, ואיתם נעלמה גם אותה נתינה קטנה, פשוטה וטבעית שליוותה אותנו במשך שנים.
+    </p>
+    <p>היום אנחנו כמעט לא מרגישים את זה, אבל איבדנו משהו בדרך.</p>
 
-    <div class="demo-shell">
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-tab="donor" role="tab">ההשפעה שלי · תורם</button>
-        <button class="tab-btn" data-tab="ngo" role="tab">מערכת הניהול · עמותה</button>
-        <button class="tab-btn" data-tab="analytics" role="tab">קמפיינים והמרות · Analytics</button>
+    <div class="pull">
+      לא את הרצון לתת.<br>
+      <span class="grad-text">את הדרך שבה הנתינה הייתה חלק מהחיים.</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="story-card">
+      <p class="lead-line"><span class="en" style="font-weight:800;">Donut</span> נולדה כדי להחזיר את זה.</p>
+      <p>
+        לא באמצעות קופת צדקה חדשה, אלא באמצעות פתרון דיגיטלי חדש,
+        שמתאים לאופן שבו אנחנו חיים היום.
+      </p>
+      <p>
+        אנחנו מאמינים שנתינה לא צריכה להיות אירוע מיוחד. היא לא צריכה לחכות לקמפיין,
+        לטלפון מנציג התרמות או ליום אחד בשנה. היא יכולה להיות פשוטה, טבעית וכמעט בלתי מורגשת.
+        בדיוק כמו שהייתה פעם.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="pioneers">
+  <div class="container-narrow">
+    <span class="section-tag">מצטרפים לדרך</span>
+    <h2>העתיד תמיד מתחיל עם הראשונים</h2>
+    <p>כמעט כל שינוי משמעותי מתחיל עם קבוצה קטנה של אנשים שמזהים את הפוטנציאל לפני כולם.</p>
+    <p>
+      כך היה עם גיוס ההמונים. כך היה עם הקהילות הדיגיטליות. כך היה עם המעבר לתרומות אונליין.
+      בכל פעם מחדש היו אלו שהעזו להצטרף ראשונים, ללמוד את הכלים החדשים ולבנות לעצמם יתרון
+      הרבה לפני שהשוק כולו הגיע לשם.
+    </p>
+    <p><strong>אנחנו מאמינים שגם עולם הנתינה עומד בפני שינוי משמעותי.</strong></p>
+    <p>
+      לכן, עוד לפני שהמערכת מושקת, אנחנו פותחים רשימת המתנה מצומצמת לעמותות שמעוניינות
+      להיות בין הראשונות להכיר את <span class="en" style="font-weight:700;">Donut</span>.
+    </p>
+
+    <div class="reassure">
+      <div class="reassure-card">
+        <div class="icon">🤝</div>
+        <div class="t">לא מדובר בהתחייבות</div>
+        <div class="s">הצטרפות לרשימת המתנה בלבד</div>
       </div>
-
-      <!-- Tab 1: Donor app -->
-      <div class="tab-panel active" id="panel-donor">
-        <div class="panel-head">
-          <div class="panel-title">אפליקציית התורם <span class="en-sub en">My Impact</span></div>
-          <div class="panel-caption">נתוני הדגמה</div>
-        </div>
-        <div class="stat-grid">
-          <div class="stat-card">
-            <div class="stat-label">נאסף ועבר החודש</div>
-            <div class="stat-value">38 ₪</div>
-            <div class="stat-foot">עיגול אגורות ותרומות קבועות</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">סך אימפקט שנתי</div>
-            <div class="stat-value indigo">427 ₪</div>
-            <div class="stat-foot">מצטבר מתחילת השנה</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">עמותות מנוהלות באופן פעיל</div>
-            <div class="stat-value">4 <span style="font-size:1rem; font-weight:600;">עמותות</span></div>
-            <div class="stat-foot">בחירה וניהול במקום אחד</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">קטגוריית השפעה מובילה</div>
-            <div class="chip">ילדים ונוער</div>
-            <div class="stat-foot" style="margin-top:0.6rem;">לפי התפלגות הנתינה שלך</div>
-          </div>
-        </div>
+      <div class="reassure-card">
+        <div class="icon">🎁</div>
+        <div class="t">אין כל עלות</div>
+        <div class="s">עכשיו ובשלב ההיכרות</div>
       </div>
-
-      <!-- Tab 2: NGO Dashboard -->
-      <div class="tab-panel" id="panel-ngo">
-        <div class="panel-head">
-          <div class="panel-title">מערכת הניהול לעמותה <span class="en-sub en">NGO Dashboard</span></div>
-          <div class="panel-caption">נתוני הדגמה</div>
-        </div>
-        <div class="stat-grid">
-          <div class="stat-card">
-            <div class="stat-label">תורמי Donut פעילים</div>
-            <div class="stat-value">128 <span style="font-size:1rem; font-weight:600;">תורמים</span></div>
-            <div class="stat-foot">קהילת התורמים של העמותה</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">הצטרפו החודש דרך הפלטפורמה</div>
-            <div class="stat-value orange">34+ <span style="font-size:1rem; font-weight:600;">משתמשים</span></div>
-            <div class="stat-foot">צמיחה חודשית</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">תרומות שהתקבלו החודש</div>
-            <div class="stat-value">2,870 ₪</div>
-            <div class="stat-foot">נתון מדגמי להמחשה</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">ערוץ הפצה אפקטיבי</div>
-            <div class="chip whatsapp">WhatsApp</div>
-            <div class="stat-foot" style="margin-top:0.6rem;">הערוץ המוביל החודש</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: Analytics -->
-      <div class="tab-panel" id="panel-analytics">
-        <div class="panel-head">
-          <div class="panel-title">קמפיינים ומדידת המרות <span class="en-sub en">Analytics</span></div>
-          <div class="panel-caption">נתוני הדגמה</div>
-        </div>
-        <div class="stat-grid" style="grid-template-columns: 1.4fr 1fr;">
-          <div class="stat-card">
-            <div class="stat-label" style="margin-bottom: 0.4rem;">המרות לפי ערוץ</div>
-            <div class="bar-row">
-              <span class="bar-name en">WhatsApp</span>
-              <div class="bar-track"><div class="bar-fill" data-width="100"></div></div>
-              <span class="bar-num">72 משתמשים</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-name en">Facebook</span>
-              <div class="bar-track"><div class="bar-fill" data-width="43"></div></div>
-              <span class="bar-num">31 משתמשים</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-name en">LinkedIn</span>
-              <div class="bar-track"><div class="bar-fill" data-width="12"></div></div>
-              <span class="bar-num">9 משתמשים</span>
-            </div>
-          </div>
-          <div class="stat-card" style="display:grid; place-content:center; text-align:center;">
-            <div class="stat-label">יחס המרה ממוצע (Conversion)</div>
-            <div class="stat-value pink" style="font-size:3rem;">18%</div>
-            <div class="stat-foot">מקליק להרשמה</div>
-          </div>
-        </div>
+      <div class="reassure-card">
+        <div class="icon">☕</div>
+        <div class="t">אין צורך בשום שינוי מצדכם</div>
+        <div class="s">אתם ממשיכים לעבוד כרגיל</div>
       </div>
     </div>
 
-    <div class="status-strip">
-      <span class="status-pill">סטטוס: <b>בשלב בדיקת היתכנות</b></span>
-      <span class="status-pill">בתהליך: <b>פיתוח טכנולוגי</b></span>
-      <span class="status-pill">פתוחה: <b>רשימת המתנה להרשמה מוקדמת</b></span>
-    </div>
+    <p>
+      אנחנו פשוט רוצים לבנות את המערכת יחד עם הארגונים שיחיו אותה ביום-יום.
+      להכיר את האתגרים שלהם, להבין מה באמת חשוב להם, ולהבטיח שכאשר
+      <span class="en" style="font-weight:700;">Donut</span> תושק – היא תהיה הכלי שהעמותות באמת צריכות.
+    </p>
+    <p><strong>אם אתם מאמינים שגם הנתינה יכולה להיכנס לעידן חדש, נשמח שתצטרפו אלינו כבר עכשיו.</strong></p>
   </div>
 </section>
 
 <section class="signup" id="signup">
   <div class="container">
-    <span class="section-tag">מצטרפים לדרך</span>
-    <h2>העמותה שלכם רוצה להיות ראשונה?</h2>
-    <p class="section-sub">השאירו פרטים ונעדכן אתכם ברגע שנפתחת ההרשמה המוקדמת. בלי התחייבות, בלי עלות.</p>
+    <span class="section-tag">רשימת ההמתנה</span>
+    <h2>היו בין הראשונים להכיר את העתיד של הנתינה בישראל</h2>
+    <p class="section-sub">הצטרפו לרשימת ההמתנה — בלי התחייבות, בלי עלות, בלי שינוי מצדכם.</p>
 
     <div class="signup-grid">
       <div>
@@ -414,8 +337,8 @@
               <option>אחר</option>
             </select>
           </div>
-          <button class="btn-primary" type="submit">הצטרפות לרשימת ההמתנה</button>
-          <p class="form-note">הפרטים נשמרים במאגר המערכת (Supabase) ומשמשים לעדכון על ההרשמה המוקדמת בלבד.</p>
+          <button class="btn-primary" type="submit">אני רוצה להיות מהראשונים</button>
+          <p class="form-note">הפרטים משמשים לעדכון על ההרשמה המוקדמת בלבד.</p>
         </form>
         <div class="form-success" id="form-success">
           🎉 תודה! נרשמתם לרשימת ההמתנה — נהיה בקשר.
@@ -437,32 +360,13 @@
     </a>
     <div class="en">Your Impact. All in One Place.</div>
     <p class="disclaimer">
-      Donut נמצאת בשלב בדיקת היתכנות ופיתוח טכנולוגי. הנתונים המוצגים בעמוד זה הם נתוני הדגמה להמחשת חוויית המוצר בלבד.
-      המערכת אינה מבצעת סליקה ואינה קשורה לחברות אשראי. ההרשמה היא לרשימת המתנה להרשמה מוקדמת בלבד.
+      Donut נמצאת בשלב בדיקת היתכנות ופיתוח טכנולוגי. המערכת אינה מבצעת סליקה ואינה קשורה
+      לחברות אשראי. ההרשמה היא לרשימת המתנה להרשמה מוקדמת בלבד, ללא התחייבות וללא עלות.
     </p>
   </div>
 </footer>
 
 <script>
-  // Tabs
-  const tabs = document.querySelectorAll('.tab-btn');
-  const panels = document.querySelectorAll('.tab-panel');
-  tabs.forEach(btn => btn.addEventListener('click', () => {
-    tabs.forEach(b => b.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
-    if (btn.dataset.tab === 'analytics') animateBars();
-  }));
-
-  // Animated bars
-  function animateBars() {
-    document.querySelectorAll('.bar-fill').forEach(bar => {
-      bar.style.width = '0';
-      requestAnimationFrame(() => setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 60));
-    });
-  }
-
   // Dynamic interest counter (demo: seeded + localStorage; production: Supabase count)
   const SEED = 34;
   const counterEl = document.getElementById('org-counter');
